@@ -1,0 +1,17 @@
+docker run --name my_ubuntu -it ubuntu:22.04 /bin/bash
+echo ‘hello world’ > /message
+exit
+
+docker ps -all
+docker commit my_ubuntu hello_world
+docker image ls
+
+docker run hello_world cat /message
+
+docker images
+docker login
+docker tag hello_world:latest suniljit1991/hello_world
+docker images
+docker push suniljit1991/hello_world
+
+docker pull suniljit1991/hello_world
